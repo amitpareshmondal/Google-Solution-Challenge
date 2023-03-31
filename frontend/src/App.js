@@ -1,6 +1,8 @@
 import logo from './logo.svg';
+import login from "./login.png"
 import './App.css';
 import {useState,useEffect,useRef} from "react";
+import { sing } from './service/firebase';
 import axios from "axios";
 function App() {
   const [testing,SetTesting]=useState('');
@@ -22,10 +24,16 @@ function App() {
 
   return (
     <div className="App">
-    <h1> This {testing}</h1>
-    <button onClick={()=>{
-      setClick(true);
-    }}>Do</button>
+   <img src={login} style={{
+    height:"200px",
+    position:"relative",
+    top:"18vh"
+   }}/>
+    <button onClick={sing} style={{
+      position:'relative',
+      top:'24vh',
+      right:'8vw'
+    }}><b>Login</b></button>
     </div>
   );
 }
